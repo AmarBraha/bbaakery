@@ -1,0 +1,93 @@
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: loader-fade-in 200ms ease-out;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.loader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.loader-gif {
+  width: clamp(96px, 20vmin, 260px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  animation: loader-pulse 2000ms ease-in-out infinite;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+@keyframes loader-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loader-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smaller on narrow screens */
+/* Make sure the loader remains usable on very small screens */
+@media (max-width: 420px) {
+  .loader-content {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .loader-gif {
+    width: clamp(80px, 28vmin, 160px);
+  }
+}
+
+/* Large screens - allow the gif to be larger but keep a max width */
+@media (min-width: 1200px) {
+  .loader-gif {
+    width: clamp(140px, 12vmin, 320px);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .loader-gif {
+    animation: none;
+  }
+  .loader-overlay {
+    transition: none;
+  }
+}

@@ -1,0 +1,226 @@
+/* Base styles */
+.footer {
+  background-color: #121820;
+  border-top: 1px solid #e0e0e0;
+  padding: 60px 20px 30px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  border-radius: 15px;
+  width: 98.5%;
+
+  max-width: 1600px;
+  margin: 40px auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+}
+
+.contact-message h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Icon sections */
+.footer-icon-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-icon {
+  font-size: 24px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.footer-icon-box h4 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.footer-icon-box p {
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Bottom section */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.footer-logo {
+  color: #2563eb;
+  font-size: 20px;
+}
+
+.footer-brand-name {
+  color: #fff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+/* .footer-socials a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #2563eb;
+  transform: scale(1.1);
+  transition: 0.3s;
+} */
+
+.facebook {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3 ease;
+}
+
+.facebook:hover {
+  color: blue;
+
+  transition: 0.3s;
+}
+
+.twitter {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3 ease;
+}
+
+.twitter:hover {
+  color: dodgerblue;
+
+  transition: 0.3s;
+}
+
+.instagram {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3 ease;
+}
+
+.instagram:hover {
+  color: darkviolet;
+
+  transition: 0.3s;
+}
+.linkedin {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3 ease;
+}
+
+.linkedin:hover {
+  color: mediumblue;
+
+  transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 15px 20px;
+    width: 95%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-message h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer-icon-box h4 {
+    font-size: 1rem;
+  }
+
+  .footer-icon-box p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px 15px;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+
+  .footer-container {
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    padding-top: 15px;
+    font-size: 12px;
+  }
+
+  .footer-socials {
+    gap: 12px;
+  }
+
+  .facebook,
+  .twitter,
+  .instagram,
+  .linkedin {
+    font-size: 18px;
+  }
+}
