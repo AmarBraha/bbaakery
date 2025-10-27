@@ -107,6 +107,9 @@ body {
   background-color: #eee8e2;
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hours-header {
@@ -141,6 +144,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   margin: 15px 0;
+  flex-grow: 1;
 }
 
 .days-column {
@@ -166,7 +170,7 @@ body {
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  margin-top: 15px;
+  margin-top: auto;
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -195,7 +199,6 @@ body {
   font-size: 16px;
 }
 
-
 #Why {
   width: 95%;
   max-width: 1600px;
@@ -216,6 +219,9 @@ body {
 
 .why-content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-header {
@@ -339,6 +345,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   margin-bottom: 40px;
+  align-items: center;
 }
 
 .services-section {
@@ -391,6 +398,20 @@ body {
   border-radius: 20px;
   overflow: hidden;
   box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.div:hover {
+  background-color: #8b5e3c;
+  transition: background-color 0.5s ease;
+}
+
+.div:hover h2,
+.div:hover p {
+  color: #fff;
+  transition: color 0.2s ease;
 }
 
 .div-content {
@@ -402,12 +423,14 @@ body {
   font-weight: 600;
   color: #8b5e3c;
   margin: 15px 0 5px 0;
+  transition: color 0.2s ease;
 }
 
 .div-title {
   font-weight: 400;
   font-size: 1.2rem;
   margin: 0;
+  transition: color 0.2s ease;
 }
 
 .img,
@@ -497,10 +520,14 @@ body {
   border-radius: 15px;
 }
 
+/* ==================== RESPONSIVE BREAKPOINTS ==================== */
+
+/* Large Tablets and Small Desktops (1200px and below) */
 @media (max-width: 1200px) {
   #Contents {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 20px;
   }
 
   .gallery,
@@ -512,17 +539,38 @@ body {
   #Why {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 30px;
+  }
+
+  .why-content {
+    padding: 10px;
+  }
+
+  .section-title,
+  .section-title-italic {
+    font-size: 2rem;
   }
 
   .why-images {
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
   }
 
   .about-image-left,
   .about-image-right {
-    height: 350px;
-    width: 220px;
+    height: 400px;
+    width: 240px;
+  }
+
+  .circular-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .center-text {
+    font-size: 36px;
   }
 
   .table-content {
@@ -546,26 +594,62 @@ body {
 
   .reviews-container,
   .testimonial-container {
-    height: 400px;
+    height: 450px;
   }
 
   .testimonial-image {
-    max-height: 400px;
+    max-height: 450px;
   }
 }
 
+/* Tablets (900px and below) */
+@media (max-width: 900px) {
+  #Contents,
+  #Why,
+  #Table,
+  #Customers {
+    padding: 24px;
+    margin: 30px auto;
+  }
+
+  .section-title,
+  .section-title-italic {
+    font-size: 1.8rem;
+  }
+
+  .services-title,
+  .services-title-italic {
+    font-size: 36px;
+  }
+
+  .section-description,
+  .services-description p {
+    font-size: 1rem;
+  }
+
+  .features-list ul {
+    font-size: 16px;
+  }
+
+  #Divs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Landscape and Small Tablets (768px and below) */
 @media (max-width: 768px) {
   #Contents,
   #Why,
   #Table,
   #Customers {
     padding: 20px;
-    margin: 20px auto;
+    margin: 25px auto;
+    width: 92%;
   }
 
   .section-title,
   .section-title-italic {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .services-title,
@@ -573,27 +657,142 @@ body {
     font-size: 32px;
   }
 
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .section-description,
+  .services-description p {
+    font-size: 0.95rem;
+  }
+
   .why-images {
     flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-image-left,
+  .about-image-right {
+    height: 350px;
+    width: 220px;
+  }
+
+  .circular-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .center-text {
+    font-size: 32px;
+  }
+
+  #Divs {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .div {
+    height: 380px;
+  }
+
+  .img,
+  .img2,
+  .img3,
+  .img4 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .gallery-text p,
+  .reviews-text p {
+    font-size: 14px;
+  }
+
+  .buttongallery {
+    font-size: 15px;
+    padding: 0.5em 1.2em;
+  }
+
+  .reviews-container,
+  .testimonial-container {
+    height: 380px;
+  }
+
+  .testimonial-image {
+    max-height: 380px;
+  }
+}
+
+/* Mobile Portrait (600px and below) */
+@media (max-width: 600px) {
+  #Contents,
+  #Why,
+  #Table,
+  #Customers {
+    width: 95%;
+    padding: 18px;
+    margin: 20px auto;
+    border-radius: 12px;
+  }
+
+  .section-title,
+  .section-title-italic {
+    font-size: 1.4rem;
+  }
+
+  .services-title,
+  .services-title-italic {
+    font-size: 28px;
+  }
+
+  .section-description,
+  .services-description p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .gallery,
+  .reviews,
+  .hours {
+    height: 280px;
+  }
+
+  .gallery-text,
+  .reviews-text {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .gallery-text p,
+  .reviews-text p {
+    font-size: 13px;
+  }
+
+  .phours {
+    font-size: 19px;
+  }
+
+  .hours-schedule {
+    font-size: 14px;
   }
 
   .about-image-left,
   .about-image-right {
     height: 300px;
-    width: 200px;
+    width: 190px;
   }
 
   .circular-wrapper {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
 
   .center-text {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  #Divs {
-    grid-template-columns: 1fr;
+  .div {
+    height: 350px;
   }
 
   .img,
@@ -603,21 +802,40 @@ body {
     width: 180px;
     height: 180px;
   }
+
+  .div-number {
+    font-size: 18px;
+  }
+
+  .div-title {
+    font-size: 1.1rem;
+  }
+
+  .reviews-container,
+  .testimonial-container {
+    height: 320px;
+  }
+
+  .testimonial-image {
+    max-height: 320px;
+  }
 }
 
+/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
   #Contents,
   #Why,
   #Table,
   #Customers {
-    width: 100%;
+    width: 96%;
     padding: 16px;
-    margin: 15px 0;
+    margin: 16px auto;
+    border-radius: 10px;
   }
 
   .section-title,
   .section-title-italic {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .services-title,
@@ -625,10 +843,61 @@ body {
     font-size: 24px;
   }
 
+  .section-subtitle {
+    font-size: 15px;
+  }
+
+  .section-description,
+  .services-description p {
+    font-size: 0.85rem;
+  }
+
+  .features-list ul {
+    font-size: 14px;
+  }
+
+  .feature-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .gallery,
+  .reviews {
+    height: 240px;
+  }
+
+  .hours {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .gallery-text p,
+  .reviews-text p {
+    font-size: 12px;
+  }
+
+  .buttongallery {
+    font-size: 14px;
+    padding: 0.5em 1em;
+  }
+
+  .phours {
+    font-size: 18px;
+  }
+
+  .hours-schedule {
+    font-size: 13px;
+  }
+
+  .getstarted {
+    font-size: 14px;
+    height: 45px;
+  }
+
   .about-image-left,
   .about-image-right {
-    height: 250px;
-    width: 180px;
+    height: 260px;
+    width: 170px;
   }
 
   .circular-wrapper {
@@ -640,12 +909,107 @@ body {
     font-size: 24px;
   }
 
-  .hours-schedule {
-    font-size: 14px;
+  .table-content {
+    gap: 20px;
   }
 
-  .getstarted {
-    font-size: 14px;
-    height: 45px;
+  .div {
+    height: 320px;
+  }
+
+  .img,
+  .img2,
+  .img3,
+  .img4 {
+    width: 160px;
+    height: 160px;
+  }
+
+  .div-content {
+    padding: 0 20px;
+  }
+
+  .div-number {
+    font-size: 17px;
+  }
+
+  .div-title {
+    font-size: 1rem;
+  }
+
+  .reviews-container,
+  .testimonial-container {
+    height: 280px;
+  }
+
+  .testimonial-image {
+    max-height: 280px;
+  }
+
+  #Customers h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  #Contents,
+  #Why,
+  #Table,
+  #Customers {
+    width: 98%;
+    padding: 12px;
+    margin: 12px auto;
+  }
+
+  .section-title,
+  .section-title-italic {
+    font-size: 1.2rem;
+  }
+
+  .services-title,
+  .services-title-italic {
+    font-size: 22px;
+  }
+
+  .section-description,
+  .services-description p {
+    font-size: 0.8rem;
+  }
+
+  .features-list ul {
+    font-size: 13px;
+  }
+
+  .gallery,
+  .reviews {
+    height: 220px;
+  }
+
+  .about-image-left,
+  .about-image-right {
+    height: 240px;
+    width: 150px;
+  }
+
+  .circular-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .center-text {
+    font-size: 20px;
+  }
+
+  .div {
+    height: 300px;
+  }
+
+  .img,
+  .img2,
+  .img3,
+  .img4 {
+    width: 140px;
+    height: 140px;
   }
 }

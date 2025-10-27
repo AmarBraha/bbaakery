@@ -1,4 +1,3 @@
-
 .navbar {
   display: flex;
   align-items: center;
@@ -164,7 +163,7 @@ body.mobile-menu-open {
     top: 10px;
   }
 
-   .navbar.scrolled {
+  .navbar.scrolled {
     width: 95%;
     padding: 8px 18px;
   }

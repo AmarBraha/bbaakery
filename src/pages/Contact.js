@@ -11,21 +11,21 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // replace with your EmailJS template ID
+        "service_oc5qn4i",
+        "template_0l5b6ef",
         form.current,
-        "YOUR_PUBLIC_KEY"   // replace with your EmailJS public key
+        "VrNlPRwD0Q6rnR4ET"
       )
       .then(
         () => {
-          toast.success("Message sent successfully! 🎉", {
-            style: { borderRadius: "10px", background: "#333", color: "#fff" },
+          toast.success("Message sent successfully!", {
+            style: { borderRadius: "10px", background: "#fff", color: "#333" },
           });
           e.target.reset();
         },
         () => {
-          toast.error("Oops! Something went wrong 😕", {
-            style: { borderRadius: "10px", background: "#333", color: "#fff" },
+          toast.error("Oops! Something went wrong", {
+            style: { borderRadius: "10px", background: "#fff", color: "#333" },
           });
         }
       );
@@ -33,17 +33,32 @@ export default function Contact() {
 
   return (
     <section className="contact-section">
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
       <div id="topp-section">
-        <div style={{alignItems: "center", justifyContent: "center",textAlign: "center"}}>
-        <h1 style={{ color: "white" }}>Contact</h1>
-        <a href="/" style={{ color: "white", textDecoration: "none" }}>Home/<span><a href="/contact" style={{ color: "white", textDecoration: "none" }}> Contact </a></span></a>
+        <div
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <h1 style={{ color: "white" }}>Contact</h1>
+          <a href="/" style={{ color: "white", textDecoration: "none" }}>
+            Home/
+            <span>
+              <a
+                href="/contact"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                {" "}
+                Contact{" "}
+              </a>
+            </span>
+          </a>
         </div>
       </div>
 
-      
       <div className="contact-container">
-        
         <div className="contact-info">
           <p className="subtitle">✦ Contact us</p>
           <h1>
@@ -51,7 +66,8 @@ export default function Contact() {
             share the <span>love for pastries</span>
           </h1>
           <p className="desc">
-            Feel free to reach out — we’re just a message away with something sweet to say!
+            Feel free to reach out — we’re just a message away with something
+            sweet to say!
           </p>
 
           <div className="info-grid">
@@ -91,21 +107,34 @@ export default function Contact() {
           </div>
         </div>
 
-        
         <div className="contact-form">
           <h2>
             Contact <span>us</span>
           </h2>
           <form ref={form} onSubmit={sendEmail}>
             <div className="form-row">
-              <input type="text" name="first_name" placeholder="First name" required />
-              <input type="text" name="last_name" placeholder="Last name" required />
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First name"
+                required
+              />
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Last name"
+                required
+              />
             </div>
             <div className="form-row">
               <input type="email" name="email" placeholder="E-mail" required />
               <input type="text" name="phone" placeholder="Phone" />
             </div>
-            <textarea name="message" placeholder="Write Message..." required></textarea>
+            <textarea
+              name="message"
+              placeholder="Write Message..."
+              required
+            ></textarea>
             <button type="submit" className="submit-btn">
               Submit Message →
             </button>

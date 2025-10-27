@@ -24,6 +24,15 @@ const slides = [
 
 function Slider() {
   const [current, setCurrent] = useState(0);
+  const [animateText, setAnimateText] = useState(true);
+
+  useEffect(() => {
+    setAnimateText(false);
+    const animTimer = setTimeout(() => {
+      setAnimateText(true);
+    }, 50);
+    return () => clearTimeout(animTimer);
+  }, [current]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,14 +49,29 @@ function Slider() {
     setCurrent((prev) => (prev + 1) % slides.length);
   };
 
+  const splitText = (text) => {
+    return text.split("").map((char, index) => (
+      <span
+        key={index}
+        className="split-char"
+        style={{
+          animationDelay: animateText ? `${index * 0.05}s` : "0s",
+        }}
+      >
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  };
+
   return (
     <div id="Slider">
       <div className="slider-images">
         <img src={slides[current].image} alt={slides[current].title} />
       </div>
       <div className="slider-text">
-        <h2>{slides[current].title}</h2>
-        <p>{slides[current].text}</p>
+        <h2 className="slide-title">{splitText(slides[current].title)}</h2>
+        <p className="slide-subtext">{splitText(slides[current].text)}</p>
+        <button className="slider-action-btn pulse-btn">Explore Menu</button>
       </div>
       <button className="slider-btn slider-btn-left" onClick={prevSlide}>
         &#10094;

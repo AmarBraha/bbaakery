@@ -33,7 +33,6 @@ const ImageModal = ({
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      {/* Close Button */}
       <button
         onClick={onClose}
         className="modal-close"
@@ -42,7 +41,6 @@ const ImageModal = ({
         ×
       </button>
 
-      {/* Previous Button */}
       {canGoPrevious && (
         <button
           onClick={(e) => {
@@ -56,13 +54,11 @@ const ImageModal = ({
         </button>
       )}
 
-      {/* Image Container */}
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <img src={image} alt={title} />
         <h3>{title}</h3>
       </div>
 
-      {/* Next Button */}
       {canGoNext && (
         <button
           onClick={(e) => {

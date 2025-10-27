@@ -1,40 +1,39 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform } from 'motion/react';
-// replace icons with your own if needed
-// import { FiCircle, FiCode, FiFileText, FiLayers, FiLayout } from 'react-icons/fi';
+
 
 import './reviews.css';
 
 const DEFAULT_ITEMS = [
   {
-    title: 'Text Animations',
-    description: 'Cool text animations for your projects.',
+    title: 'Sarah Mitchell',
+    description: 'The bread here is absolutely divine! Every morning I stop by for their sourdough and croissants. The quality is unmatched and the staff is so friendly.',
     id: 1,
-    // icon: <FiFileText className="carousel-icon" />
+    icon: <img src="https://i.pravatar.cc/150?img=1" alt="Sarah" style={{width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover', marginLeft:20,marginTop:20}} />
   },
   {
-    title: 'Animations',
-    description: 'Smooth animations for your projects.',
+    title: 'James Anderson',
+    description: 'Best bakery in town! Their artisan breads are perfect, and the pastries are to die for. The cinnamon rolls are my weekend treat. Worth every penny!',
     id: 2,
-    // icon: <FiCircle className="carousel-icon" />
+    icon: <img src="https://i.pravatar.cc/150?img=13" alt="James" style={{width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover', marginLeft:20,marginTop:20}} />
   },
   {
-    title: 'Components',
-    description: 'Reusable components for your projects.',
+    title: 'Emma Thompson',
+    description: 'I have been coming here for years and the quality never disappoints. Their baguettes are authentic and crispy. The whole wheat bread is my go-to!',
     id: 3,
-    // icon: <FiLayers className="carousel-icon" />
+    icon: <img src="https://i.pravatar.cc/150?img=5" alt="Emma" style={{width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover', marginLeft:20,marginTop:20}} />
   },
   {
-    title: 'Backgrounds',
-    description: 'Beautiful backgrounds and patterns for your projects.',
+    title: 'Michael Chen',
+    description: 'Amazing selection of fresh baked goods! The chocolate croissants are heavenly. Great atmosphere and the aroma when you walk in is incredible.',
     id: 4,
-    // icon: <FiLayout className="carousel-icon" />
+    icon: <img src="https://i.pravatar.cc/150?img=12" alt="Michael" style={{width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover', marginLeft:20,marginTop:20}} />
   },
   {
-    title: 'Common UI',
-    description: 'Common UI components are coming soon!',
+    title: 'Olivia Rodriguez',
+    description: 'This bakery has become part of my daily routine. Their multigrain bread is perfect and their custom cakes for special occasions are stunning!',
     id: 5,
-    // icon: <FiCode className="carousel-icon" />
+    icon: <img src="https://i.pravatar.cc/150?img=9" alt="Olivia" style={{width: '60px', height: '60px', borderRadius: '50%', objectFit: 'cover', marginLeft:20,marginTop:20}} />
   }
 ];
 

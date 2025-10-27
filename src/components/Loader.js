@@ -2,14 +2,7 @@ import React, { useEffect } from "react";
 import "./Loader.css";
 import bakeryGif from "../images/bakery-shop.gif";
 
-/**
- * Full-screen loading overlay.
- * Props:
- * - loading: boolean (show/hide)
- * - text?: optional string shown under the gif
- */
 export default function Loader({ loading = true }) {
-  // Prevent body scroll when loader is active
   useEffect(() => {
     if (loading) {
       document.body.classList.add("loader-active");
@@ -29,7 +22,6 @@ export default function Loader({ loading = true }) {
       document.documentElement.style.overflow = "unset";
     }
 
-    // Cleanup function to restore scroll when component unmounts
     return () => {
       document.body.classList.remove("loader-active");
       document.documentElement.classList.remove("loader-active");

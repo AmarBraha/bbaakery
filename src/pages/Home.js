@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 import Slider from "../components/Slider";
 import elisha from "../images/elisha-terada-IYjXGUpJH74-unsplash.jpg";
@@ -10,6 +11,10 @@ import Image1 from "../images/about-us-image-1.jpg";
 import Image2 from "../images/about-us-image-2.jpg";
 
 function Home() {
+  const navigate = useNavigate ();
+  const gotoContact = () => {
+    navigate("/contact")
+  }
   return (
     <div>
       <Slider />
@@ -77,7 +82,7 @@ function Home() {
               <p>Closed</p>
             </div>
           </div>
-          <button className="getstarted">
+          <button className="getstarted" onClick={gotoContact}>
             <span>Get Started Now!</span>
           </button>
         </div>

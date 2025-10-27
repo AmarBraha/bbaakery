@@ -4,8 +4,14 @@ import Image1 from "../images/about-us-image-1.jpg";
 import Image2 from "../images/about-us-image-2.jpg";
 import Reviews from "../components/reviews.js";
 import CountUp from "../components/CountUp.js";
+import { useNavigate } from "react-router-dom";
 
-function About() {
+function About()
+ {
+   const navigate = useNavigate ();
+  const gotoContact = () => {
+    navigate("/contact")
+  }
   return (
     <div className="about-page">
       <div id="topp-section">
@@ -117,7 +123,7 @@ function About() {
             </div>
           </div>
           <br />
-          <button className="getstarted">
+          <button className="getstarted" onClick={gotoContact}>
             <span>Contact Us ➚</span>
           </button>
         </div>

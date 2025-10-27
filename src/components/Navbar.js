@@ -10,7 +10,6 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -27,7 +26,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -45,12 +43,12 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-           <div className="navbar-left">
+      <Link to="/" style={{textDecoration: "none"}}>
+      <div className="navbar-left">
         <div className="logo-icon">🍞</div>
-        <h1 className="logo-text">Backeri</h1>
+        <h1 className="logo-text">Bakery</h1>
       </div>
-
-
+  </Link>
       <ul className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
         <li>
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
@@ -79,7 +77,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+      <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
         <span className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}>
           <span></span>
           <span></span>

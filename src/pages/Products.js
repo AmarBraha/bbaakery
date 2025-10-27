@@ -42,7 +42,6 @@ export default function Products() {
       </div>
 
       <div className="bakery-wrapper">
-        {/* Category Buttons */}
         <div className="category-buttons">
           {categories.map(cat => (
             <button
@@ -55,7 +54,6 @@ export default function Products() {
           ))}
         </div>
 
-        {/* Product Grid */}
         <div className="product-grid">
           {filteredProducts.map(product => (
             <div key={product.id} className="product-card">
