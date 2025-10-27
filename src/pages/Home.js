@@ -40,8 +40,8 @@ function Home() {
           }}
         >
           <div className="reviews-text">
-            <p>"The best breads I've ever tasted!</p>
-            <p>Fresh & buttery - I can't start my mornings"</p>
+            <p>“The best croissants I've ever tasted! Fresh, flaky &</p>
+            <p>buttery - I can't start my mornings ”</p>
           </div>
         </div>
 

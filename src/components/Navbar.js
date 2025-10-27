@@ -4,10 +4,28 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -19,7 +37,6 @@ const Navbar = () => {
       document.body.classList.remove("mobile-menu-open");
     }
 
-    // Cleanup function to restore scroll when component unmounts
     return () => {
       document.body.style.overflow = "unset";
       document.body.classList.remove("mobile-menu-open");
@@ -27,14 +44,13 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="navbar">
-      {/* Left: Logo */}
-      <div className="navbar-left">
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+           <div className="navbar-left">
         <div className="logo-icon">🍞</div>
         <h1 className="logo-text">Backeri</h1>
       </div>
 
-      {/* Center: Links */}
+
       <ul className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
         <li>
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
@@ -63,8 +79,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* Right: Mobile Menu Toggle */}
-      <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
         <span className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}>
           <span></span>
           <span></span>
