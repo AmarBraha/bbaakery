@@ -43,12 +43,12 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <Link to="/" style={{textDecoration: "none"}}>
-      <div className="navbar-left">
-        <div className="logo-icon">🍞</div>
-        <h1 className="logo-text">Bakery</h1>
-      </div>
-  </Link>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <div className="navbar-left">
+          <div className="logo-icon">🍞</div>
+          <h1 className="logo-text">Bakery</h1>
+        </div>
+      </Link>
       <ul className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
         <li>
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>

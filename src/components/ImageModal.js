@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import './ImageModal.css';
+import React, { useEffect } from "react";
+import "./ImageModal.css";
 
 const ImageModal = ({
   isOpen,
@@ -13,19 +13,19 @@ const ImageModal = ({
 }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft' && canGoPrevious) onPrevious();
-      if (e.key === 'ArrowRight' && canGoNext) onNext();
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft" && canGoPrevious) onPrevious();
+      if (e.key === "ArrowRight" && canGoNext) onNext();
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
+      document.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose, onNext, onPrevious, canGoNext, canGoPrevious]);
 

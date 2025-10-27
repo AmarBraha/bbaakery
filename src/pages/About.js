@@ -6,12 +6,11 @@ import Reviews from "../components/reviews.js";
 import CountUp from "../components/CountUp.js";
 import { useNavigate } from "react-router-dom";
 
-function About()
- {
-   const navigate = useNavigate ();
+function About() {
+  const navigate = useNavigate();
   const gotoContact = () => {
-    navigate("/contact")
-  }
+    navigate("/contact");
+  };
   return (
     <div className="about-page">
       <div id="topp-section">
@@ -22,10 +21,19 @@ function About()
             textAlign: "center",
           }}
         >
-          <h1 style={{ color: "white", fontSize: "3rem", marginBottom: "10px" }}>
+          <h1
+            style={{ color: "white", fontSize: "3rem", marginBottom: "10px" }}
+          >
             About Us
           </h1>
-          <a href="/" style={{ color: "white", textDecoration: "none", fontSize: "1.1rem" }}>
+          <a
+            href="/"
+            style={{
+              color: "white",
+              textDecoration: "none",
+              fontSize: "1.1rem",
+            }}
+          >
             Home
             <span>
               {" / "}
@@ -181,7 +189,21 @@ function About()
           <div id="Divat">
             <div className="Mission">
               <div className="value-header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-blocks-icon lucide-blocks"><path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2"/><rect x="14" y="2" width="8" height="8" rx="1"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b5e3c"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-blocks-icon lucide-blocks"
+                >
+                  <path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />
+                  <rect x="14" y="2" width="8" height="8" rx="1" />
+                </svg>
                 <h2>Our Mission</h2>
               </div>
               <p>
@@ -191,10 +213,24 @@ function About()
             </div>
             <div className="Mission">
               <div className="value-header">
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#8b5e3c"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-eye-icon lucide-eye"
+                >
+                  <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
                 <h2>Our Vision</h2>
               </div>
-            
+
               <p>
                 To become the most beloved bakery in our community, spreading
                 joy through exceptional baked goods and warm hospitality.
@@ -279,25 +315,17 @@ function About()
         <div className="stats-container">
           <div className="stat-card">
             <div className="stat-number">
-
-
               <p>
-              <CountUp
-  from={0}
-  to={25}
-  separator=","
-  direction="up"
-  duration={1}
-  className="count-up-text"
-
-/>
-+
-</p>
-
-
-
-
-
+                <CountUp
+                  from={0}
+                  to={25}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+                +
+              </p>
             </div>
             <div className="stat-label">Years Experience</div>
             <p className="stat-description">
@@ -306,26 +334,17 @@ function About()
           </div>
           <div className="stat-card">
             <div className="stat-number">
-
-
-             <p>
-              <CountUp
-  from={0}
-  to={100}
-  separator=","
-  direction="up"
-  duration={1}
-  className="count-up-text"
-
-/>
-+
-</p>
-
-
-
-
-
-
+              <p>
+                <CountUp
+                  from={0}
+                  to={100}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+                +
+              </p>
             </div>
             <div className="stat-label">Happy Customers</div>
             <p className="stat-description">
@@ -334,29 +353,17 @@ function About()
           </div>
           <div className="stat-card">
             <div className="stat-number">
-
-
-
-
-
-             <p>
-              <CountUp
-  from={0}
-  to={50}
-  separator=","
-  direction="up"
-  duration={1}
-  className="count-up-text"
-
-/>
-+
-</p>
-
-
-
-
-
-
+              <p>
+                <CountUp
+                  from={0}
+                  to={50}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+                +
+              </p>
             </div>
             <div className="stat-label">Products</div>
             <p className="stat-description">
@@ -365,29 +372,18 @@ function About()
           </div>
           <div className="stat-card">
             <div className="stat-number">
-              
-              
-              
-              
-                           <p>
-              <CountUp
-  from={0}
-  to={100}
-  separator=","
-  direction="up"
-  duration={1}
-  className="count-up-text"
-
-/>
-%
-</p>
-
-              
-              
-              
-              
-              
-              </div>
+              <p>
+                <CountUp
+                  from={0}
+                  to={100}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="count-up-text"
+                />
+                %
+              </p>
+            </div>
             <div className="stat-label">Fresh Daily</div>
             <p className="stat-description">
               Baked fresh every morning with love
