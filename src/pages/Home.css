@@ -37,7 +37,7 @@ body {
 }
 
 .gallery-content {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -55,12 +55,33 @@ body {
   padding: 0.6em 1.5em;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 20px;
+  margin-left: 20px;
+
+}
+
+
+
+
+
+
+.buttongallery:hover {
+  background-color: #8b5e3c;
+  transition: background-color 0.5s ease;
 }
 
 .buttongallery:hover {
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+
+
+/* 
+.buttongallery:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
-}
+} */
 
 .gallery-text {
   position: absolute;
@@ -75,6 +96,58 @@ body {
   margin: 5px 0;
   font-size: 16px;
   line-height: 1.4;
+
+}
+
+.google-review-widget {
+  margin-top: 225px;
+  margin-left: 335px;
+}
+
+.google-badge-container {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.google-review-link {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.google-review-link:hover {
+  transform: scale(1.05);
+}
+
+.google-review-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #121820;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.google-review-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-rating {
+  color: #FFC107;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.review-text {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .reviews {
@@ -83,11 +156,11 @@ body {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-}
+  }
 
 .reviews-text {
   position: absolute;
-  bottom: 20px;
+  top: 20px;
   left: 20px;
   color: white;
   z-index: 3;
@@ -520,9 +593,6 @@ body {
   border-radius: 15px;
 }
 
-/* ==================== RESPONSIVE BREAKPOINTS ==================== */
-
-/* Large Tablets and Small Desktops (1200px and below) */
 @media (max-width: 1200px) {
   #Contents {
     grid-template-columns: 1fr;
@@ -602,7 +672,7 @@ body {
   }
 }
 
-/* Tablets (900px and below) */
+
 @media (max-width: 900px) {
   #Contents,
   #Why,
@@ -635,8 +705,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* Mobile Landscape and Small Tablets (768px and below) */
 @media (max-width: 768px) {
   #Contents,
   #Why,
@@ -721,9 +789,19 @@ body {
   .testimonial-image {
     max-height: 380px;
   }
-}
 
-/* Mobile Portrait (600px and below) */
+  .google-review-badge {
+    padding: 8px 12px;
+  }
+
+  .review-rating {
+    font-size: 12px;
+  }
+
+  .review-text {
+    font-size: 11px;
+  }
+}
 @media (max-width: 600px) {
   #Contents,
   #Why,
@@ -821,7 +899,6 @@ body {
   }
 }
 
-/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
   #Contents,
   #Why,
@@ -949,9 +1026,26 @@ body {
   #Customers h1 {
     font-size: 1.3rem;
   }
+
+  .google-review-badge {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .google-review-badge svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .review-rating {
+    font-size: 11px;
+  }
+
+  .review-text {
+    font-size: 10px;
+  }
 }
 
-/* Extra Small Mobile (360px and below) */
 @media (max-width: 360px) {
   #Contents,
   #Why,

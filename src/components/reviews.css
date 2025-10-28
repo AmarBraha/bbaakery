@@ -133,3 +133,39 @@
 .carousel-indicator.inactive {
   background-color: #555;
 }
+
+@media (max-width: 1024px) {
+  .carousel-container {
+    width: 90%;
+    height: auto;
+  }
+
+  .carousel-container.round {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 95%;
+    height: auto;
+  }
+
+  .carousel-container.round {
+    width: 85vw;
+    height: 85vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel-container.round {
+    width: 90vw;
+    height: 90vw;
+  }
+}

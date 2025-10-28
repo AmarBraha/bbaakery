@@ -1,4 +1,4 @@
-/* Base styles */
+
 .footer {
   background-color: #121820;
   border-top: 1px solid #e0e0e0;
@@ -31,7 +31,6 @@
   margin: 0;
 }
 
-/* Icon sections */
 .footer-icon-box {
   display: flex;
   align-items: flex-start;
@@ -56,7 +55,6 @@
   line-height: 1.6;
 }
 
-/* Bottom section */
 .footer-bottom {
   max-width: 1200px;
   margin: 40px auto 0;
@@ -156,7 +154,6 @@
   transition: 0.3s;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .footer {
     padding: 40px 15px 20px;
