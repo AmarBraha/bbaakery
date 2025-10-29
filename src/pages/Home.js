@@ -10,6 +10,9 @@ import CircularText from "../components/Circulartext.js";
 import Image1 from "../images/about-us-image-1.jpg";
 import Image2 from "../images/about-us-image-2.jpg";
 
+
+
+
 function Home() {
   const navigate = useNavigate();
   const gotoContact = () => {

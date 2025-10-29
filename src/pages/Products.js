@@ -1,8 +1,13 @@
+
 import React, { useState } from "react";
-import "./Products.css"; // import CSS
+import { X, ShoppingCart } from "lucide-react";
+import "./Products.css";
 
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [showNotification, setShowNotification] = useState(false);
 
   const products = [
     {
@@ -145,33 +150,48 @@ export default function Products() {
       ? products
       : products.filter((p) => p.category === activeCategory);
 
+  const handleAddToCart = (product) => {
+    setCart([...cart, product]);
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 2000);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+
   return (
     <div className="bakery-container">
+ 
       <div id="topp-section">
-        <div
-          style={{
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-        >
-          <h1 style={{ color: "white" }}>Products</h1>
-          <a href="/" style={{ color: "white", textDecoration: "none" }}>
-            Home/
-            <span>
-              <a
-                href="/products"
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                {" "}
-                Products{" "}
-              </a>
-            </span>
-          </a>
+        <div className="header-content">
+          <h1>Products</h1>
+          <div className="breadcrumb">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/products">Products</a>
+          </div>
         </div>
       </div>
 
+
+      {showNotification && (
+        <div className="notification">
+          <ShoppingCart size={20} />
+          <span>Added to cart!</span>
+        </div>
+      )}
+
       <div className="bakery-wrapper">
+        <div className="cart-container">
+          <div className="cart-badge-wrapper">
+            <ShoppingCart className="cart-icon" size={28} />
+            {cart.length > 0 && (
+              <span className="cart-count">{cart.length}</span>
+            )}
+          </div>
+        </div>
+
         <div className="category-buttons">
           {categories.map((cat) => (
             <button
@@ -188,7 +208,11 @@ export default function Products() {
 
         <div className="product-grid">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="product-card">
+            <div
+              key={product.id}
+              className="product-card"
+              onClick={() => setSelectedProduct(product)}
+            >
               <div className="product-image">
                 <img src={product.image} alt={product.name} />
               </div>
@@ -203,6 +227,54 @@ export default function Products() {
           ))}
         </div>
       </div>
+
+      {selectedProduct && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-image-wrapper">
+              <button onClick={closeModal} className="modal-close-btn">
+                <X size={24} />
+              </button>
+              <img
+                src={selectedProduct.image}
+                alt={selectedProduct.name}
+                className="modal-image"
+              />
+            </div>
+
+            <div className="modal-body">
+              <div className="modal-header">
+                <h2 className="modal-title">{selectedProduct.name}</h2>
+                <span className="modal-price">{selectedProduct.price}</span>
+              </div>
+
+              <p className="modal-description">{selectedProduct.desc}</p>
+
+              <div className="modal-category">
+                <span className="category-badge">
+                  {selectedProduct.category}
+                </span>
+              </div>
+
+              <div className="modal-actions">
+                <button
+                  onClick={() => {
+                    handleAddToCart(selectedProduct);
+                    closeModal();
+                  }}
+                  className="btn-add-to-cart"
+                >
+                  <ShoppingCart size={20} />
+                  Add to Cart
+                </button>
+                <button onClick={closeModal} className="btn-close">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

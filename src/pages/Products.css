@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -14,12 +15,110 @@ body {
 .bakery-container {
   min-height: 100vh;
   background: #ffffff;
-  padding: 3rem 2rem;
+}
+
+#topp-section {
+  width: 95%;
+  max-width: 1600px;
+  height: 40vh;
+  min-height: 300px;
+  margin: 40px auto;
+  padding: 24px;
+  background-image: url("../images/fresh-baked-sweet-delights-rustic-bakery-shelf-generated-by-ai.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #01193f;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border: 2px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.header-content h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  margin: 0 0.5rem;
+}
+
+.notification {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #16a34a;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+.cart-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.cart-badge-wrapper {
+  position: relative;
+}
+
+.cart-icon {
+  color: #78350f;
+}
+
+.cart-count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background: #78350f;
+  color: white;
+  font-size: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .bakery-wrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 3rem 2rem;
 }
 
 .category-buttons {
@@ -32,49 +131,29 @@ body {
 
 .category-btn {
   padding: 0.75rem 2rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 1px;
-  border: 2px solid #c9a86a;
+  letter-spacing: 2px;
+  border: 2px solid #92400e;
   background: transparent;
   color: #666;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  border-radius: 10px;
-}
-
-.category-btn::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background: #8b5e3c;
-  color: #fff;
-  z-index: -1;
-  transition: height 0.5s ease;
-}
-
-.category-btn:hover::before {
-  height: 100%;
-  color: #fff;
-  transition: height 0.5s ease;
+  border-radius: 0.5rem;
+  position: relative;
 }
 
 .category-btn:hover {
-  border-color: #8b5e3c;
-  color: #fff;
+  background: #78350f;
+  color: white;
   transform: translateY(-2px);
 }
 
 .category-btn.active {
-  border-color: #8b5e3c;
-  color: #fff;
-  transform: translateY(-2px);
+  background: #78350f;
+  color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #8b5e3c;
 }
 
 .product-grid {
@@ -85,15 +164,16 @@ body {
 
 .product-card {
   border: 2px solid #e0e0e0;
-  transition: all 0.3s ease;
-  animation: fadeIn 0.5s ease-in-out;
   background: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 0.5s ease-in-out;
 }
 
 .product-card:hover {
-  border-color: #c9a86a;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #92400e;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .product-image {
@@ -111,8 +191,6 @@ body {
 
 .product-info {
   padding: 1.5rem;
-  border: 1px solid #f0f0f0;
-  margin: 1rem;
 }
 
 .product-header {
@@ -125,7 +203,7 @@ body {
 }
 
 .product-name {
-  font-size: 1.3rem;
+  font-size: 1.125rem;
   color: #1a1a1a;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -133,19 +211,173 @@ body {
 }
 
 .price {
-  font-size: 1.3rem;
-  color: #c9a86a;
+  font-size: 1.125rem;
+  color: #92400e;
   font-weight: 500;
 }
 
 .product-description {
   color: #666;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   margin: 0;
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 0.5rem;
+  max-width: 42rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.3s ease-out;
+}
+
+.modal-image-wrapper {
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.modal-close-btn:hover {
+  background: #f3f4f6;
+}
+
+.modal-close-btn svg {
+  color: #4b5563;
+}
+
+.modal-image {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  font-size: 1.875rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.modal-price {
+  font-size: 1.875rem;
+  font-weight: 500;
+  color: #92400e;
+}
+
+.modal-description {
+  color: #666;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.modal-category {
+  margin-bottom: 1.5rem;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #fef3c7;
+  color: #78350f;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-add-to-cart {
+  flex: 1;
+  background: #78350f;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-add-to-cart:hover {
+  background: #92400e;
+}
+
+.btn-close {
+  padding: 1rem 2rem;
+  border: 2px solid #d1d5db;
+  background: transparent;
+  color: #374151;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-close:hover {
+  background: #f9fafb;
+}
+
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -156,8 +388,19 @@ body {
   }
 }
 
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 768px) {
-  .bakery-container {
+  .bakery-wrapper {
     padding: 2rem 1rem;
   }
 
@@ -168,7 +411,7 @@ body {
 
   .category-btn {
     padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
 
   .product-grid {
@@ -176,23 +419,37 @@ body {
     gap: 1.5rem;
   }
 
-  .product-info {
-    padding: 1rem;
-    margin: 0.5rem;
+  .modal-body {
+    padding: 1.5rem;
   }
 
-  .product-name,
-  .price {
-    font-size: 1.1rem;
+  .modal-title {
+    font-size: 1.5rem;
   }
 
-  .product-description {
-    font-size: 0.85rem;
+  .modal-price {
+    font-size: 1.5rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .btn-close {
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .bakery-container {
+  #topp-section {
+    padding: 3rem 1rem;
+  }
+
+  .header-content h1 {
+    font-size: 2rem;
+  }
+
+  .bakery-wrapper {
     padding: 1.5rem 0.5rem;
   }
 
@@ -215,8 +472,25 @@ body {
     height: 180px;
   }
 
-  .product-info {
-    padding: 0.75rem;
-    margin: 0.25rem;
+  .modal-image {
+    height: 15rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-price {
+    font-size: 1.25rem;
+  }
+
+  .btn-add-to-cart,
+  .btn-close {
+    font-size: 1rem;
+    padding: 0.875rem 1rem;
   }
 }
