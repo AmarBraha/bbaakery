@@ -3,6 +3,7 @@ import "./Slider.css";
 import Image1 from "../images/fresh-baked-sweet-delights-rustic-bakery-shelf-generated-by-ai.jpg";
 import Image2 from "../images/hero-image.jpg";
 import Image3 from "../images/interior-of-a-bakery.webp";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -23,6 +24,11 @@ const slides = [
 ];
 
 function Slider() {
+  const navigate = useNavigate();
+  const gotoProducts = () => {
+    navigate("/products");
+  };
+
   const [current, setCurrent] = useState(0);
   const [animateText, setAnimateText] = useState(true);
 
@@ -71,7 +77,9 @@ function Slider() {
       <div className="slider-text">
         <h2 className="slide-title">{splitText(slides[current].title)}</h2>
         <p className="slide-subtext">{splitText(slides[current].text)}</p>
-        <button className="slider-action-btn pulse-btn">Explore Menu</button>
+        <button className="slider-action-btn pulse-btn" onClick={gotoProducts}>
+          Explore Menu
+        </button>
       </div>
       <button className="slider-btn slider-btn-left" onClick={prevSlide}>
         &#10094;

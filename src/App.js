@@ -9,6 +9,8 @@ import Gallery from "./pages/Gallery";
 import Products from "./pages/Products";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BackToTopButton from "./components/BackToTopButton";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,7 +24,10 @@ function App() {
     <div className="App">
       <Loader loading={loading} />
 
+      <BackToTopButton />
+
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
