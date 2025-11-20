@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import BackToTopButton from "./components/BackToTopButton";
 import ScrollToTop from "./components/ScrollToTop";
 
+
 function App() {
   const [loading, setLoading] = useState(true);
 
