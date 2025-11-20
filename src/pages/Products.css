@@ -226,11 +226,11 @@ body {
 
 .favorite-btn:hover {
   transform: scale(1.1);
-  background: white;
+  background: #78350f;
 }
 
 .favorite-btn.active {
-  background: #fef2f2;
+  background: #78350f;
 }
 
 .product-info {
