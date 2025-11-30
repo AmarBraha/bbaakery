@@ -60,14 +60,14 @@ export default function Products() {
 
   const isFavorite = (productId) => favorites.some(item => item.id === productId);
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product, quantity = modalQuantity) => {
     const existingItem = cart.find(item => item.id === product.id);
     if (existingItem) {
-      setCart(cart.map(item => item.id === product.id ? { ...item, quantity: item.quantity + modalQuantity } : item));
+      setCart(cart.map(item => item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item));
     } else {
-      setCart([...cart, { ...product, quantity: modalQuantity }]);
+      setCart([...cart, { ...product, quantity }]);
     }
-    showNotificationMsg("Added to cart!");
+    showNotificationMsg(`Added ${quantity}x ${product.name} to cart!`);
   };
 
   const updateQuantity = (productId, change) => {
@@ -81,7 +81,12 @@ export default function Products() {
   };
 
   const removeFromCart = (productId) => setCart(cart.filter(item => item.id !== productId));
-  const getCartTotal = () => cart.reduce((total, item) => total + (parseFloat(item.price.replace('$', '')) * item.quantity), 0).toFixed(2);
+  
+  const getCartTotal = () => cart.reduce((total, item) => {
+    const price = typeof item.price === 'string' ? parseFloat(item.price.replace('$', '')) : parseFloat(item.price);
+    return total + (price * item.quantity);
+  }, 0).toFixed(2);
+  
   const getTotalItems = () => cart.reduce((total, item) => total + item.quantity, 0);
   const closeModal = () => { setSelectedProduct(null); setModalQuantity(1); };
   const increaseModalQuantity = () => setModalQuantity(prev => prev + 1);
@@ -179,6 +184,7 @@ export default function Products() {
           </div>
         </div>
       )}
+
       <div className={`favorites-sidebar ${isFavoritesOpen ? 'open' : ''}`}>
         <div className="favorites-sidebar-header">
           <h2>My Favorites</h2>
@@ -222,7 +228,7 @@ export default function Products() {
                 <img src={item.image} alt={item.name} className="cart-item-image" />
                 <div className="cart-item-details">
                   <h3>{item.name}</h3>
-                  <p className="cart-item-price">{item.price}</p>
+                  <p className="cart-item-price">{typeof item.price === 'string' ? item.price : `$${item.price.toFixed(2)}`}</p>
                   <div className="cart-item-actions">
                     <div className="quantity-controls">
                       <button onClick={() => updateQuantity(item.id, -1)} className="quantity-btn"><Minus size={16} /></button>

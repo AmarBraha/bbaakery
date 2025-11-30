@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ThemeSwitch from "../components/ThemeSwitch";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleThemeToggle = (checked) => {
+    setIsDark(checked);
   };
 
   useEffect(() => {
@@ -41,6 +47,10 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    document.body.className = isDark ? 'dark-theme' : 'light-theme';
+  }, [isDark]);
+
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -49,6 +59,7 @@ const Navbar = () => {
           <h1 className="logo-text">Bakery</h1>
         </div>
       </Link>
+
       <ul className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
         <li>
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
@@ -77,13 +88,16 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-        <span className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
+      <div className="navbar-right">
+        <ThemeSwitch isDark={isDark} onToggle={handleThemeToggle} />
+        <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+          <span className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
     </nav>
   );
 };

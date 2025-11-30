@@ -1,0 +1,153 @@
+
+
+/* Light Theme */
+body.light-theme {
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: rgb(243, 239, 235);
+  --bg-tertiary: #f3efeb;
+  --bg-card: #ffffff;
+  --bg-dark: #121820;
+  --bg-hover: #f9fafb;
+  --bg-overlay: #01193f;
+  /* --bg-mission:#393939; */
+
+
+
+  /* Text colors */
+  --text-primary: #1c1c1c;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --text-muted: #b0b0b0;
+  --text-on-dark: #ffffff;
+  --text-heading: #1a1a1a;
+  --text-body: #2c2c2c;
+  
+  /* Accent colors */
+  --accent-primary: #c56e33;
+  --accent-secondary: #6d4a2e;
+  --accent-tertiary: #78350f;
+  --accent-hover: #92400e;
+  
+  /* Navbar */
+  --navbar-bg: #f6f2ee;
+  --navbar-text: #1c1c1c;
+  --logo-bg: #8b5e3c;
+  --hamburger-color: #8b5e3c;
+  
+  /* Borders & Shadows */
+  --border-color: #eee;
+  --border-secondary: #e0e0e0;
+  --border-light: #f0f0f0;
+  --border-dark: #ccc;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.15);
+  
+  /* Mobile menu */
+  --mobile-menu-bg: rgba(246, 242, 238, 0.98);
+  --mobile-link-color: #8b5e3c;
+  --mobile-link-hover-bg: #8b5e3c;
+  --mobile-link-hover-text: white;
+  
+  /* Hours section */
+  --hours-bg: #eee8e2;
+  --hours-text: black;
+  --hours-divider: #ccc;
+  
+  /* Review badge */
+  --review-badge-bg: #121820;
+  --review-rating-color: #ffc107;
+  --review-text-color: #fff;
+  
+  /* Category badges */
+  --category-badge-bg: #fef3c7;
+  --category-badge-text: #78350f;
+  
+  /* Stats cards */
+  --stat-card-bg: rgba(255, 255, 255, 0.05);
+  --stat-card-hover: rgba(255, 255, 255, 0.08);
+  --stat-card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Theme */
+body.dark-theme {
+  /* Background colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #0f0f0f;
+  --bg-tertiary: #393939;
+  --bg-card: #2d2d2d;
+  --bg-dark: #0a0a0a;
+  --bg-hover: #3a3a3a;
+  --bg-overlay: #000814;
+  
+  /* Text colors */
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #808080;
+  --text-muted: #666666;
+  --text-on-dark: #e0e0e0;
+  --text-heading: #f5f5f5;
+  --text-body: #d0d0d0;
+  
+  /* Accent colors */
+  --accent-primary: #a67c52;
+  --accent-secondary: #c89868;
+  --accent-tertiary: #9f7042;
+  --accent-hover: #b88a5e;
+  
+  /* Navbar */
+  --navbar-bg: #2d2d2d;
+  --navbar-text: #e0e0e0;
+  --logo-bg: #a67c52;
+  --hamburger-color: #a67c52;
+  
+  /* Borders & Shadows */
+  --border-color: #404040;
+  --border-secondary: #505050;
+  --border-light: #3a3a3a;
+  --border-dark: #555555;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.6);
+  
+  /* Mobile menu */
+  --mobile-menu-bg: rgba(45, 45, 45, 0.98);
+  --mobile-link-color: #e0e0e0;
+  --mobile-link-hover-bg: #a67c52;
+  --mobile-link-hover-text: white;
+  
+  /* Hours section */
+  --hours-bg: #3a3a3a;
+  --hours-text: #e0e0e0;
+  --hours-divider: #555555;
+  
+  /* Review badge */
+  --review-badge-bg: #3a3a3a;
+  --review-rating-color: #ffc107;
+  --review-text-color: #e0e0e0;
+  
+  /* Category badges */
+  --category-badge-bg: #4a3520;
+  --category-badge-text: #d4a574;
+  
+  /* Stats cards */
+  --stat-card-bg: rgba(255, 255, 255, 0.03);
+  --stat-card-hover: rgba(255, 255, 255, 0.06);
+  --stat-card-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Theme transitions */
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}

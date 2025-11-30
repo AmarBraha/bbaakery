@@ -11,6 +11,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BackToTopButton from "./components/BackToTopButton";
 import ScrollToTop from "./components/ScrollToTop";
+import Bakey from "./components/Bakey";
+import './components/theme.css';
 
 
 function App() {
@@ -24,9 +26,8 @@ function App() {
   return (
     <div className="App">
       <Loader loading={loading} />
-
       <BackToTopButton />
-
+      <Bakey />
       <Router>
         <ScrollToTop />
         <Navbar />
